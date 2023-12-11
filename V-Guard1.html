@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="
+            https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js
+            "></script>
+    <link href="
+            https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
+            " rel="stylesheet">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script async src="https://js.stripe.com/v3/buy-button.js">
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js">
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+    }
+
+    #s {
+        position: relative;
+    }
+
+    #s1 {
+        display: flex;
+        width: 100%;
+        height: 50px;
+        background: rgb(13, 13, 13);
+        color: rgb(229, 146, 7);
+        cursor: pointer;
+    }
+
+    #n1 {
+        display: flex;
+        margin-left: 400px;
+        /* margin-top: 15px; */
+        margin-bottom: 10px;
+        font-size: 15px;
+    }
+
+    #n11 {
+        margin-top: 15px;
+        font-size: 20px;
+        margin-right: 10px;
+    }
+
+    #n12 {
+        margin-top: 10px;
+    }
+
+    #n12:hover {
+        color: aliceblue;
+    }
+
+    #n22:hover {
+        color: aliceblue;
+    }
+
+    #n32:hover {
+        color: aliceblue;
+    }
+
+    #n42:hover {
+        color: aliceblue;
+    }
+
+    #n52:hover {
+        color: aliceblue;
+    }
+
+    #n62:hover {
+        color: aliceblue;
+    }
+
+    #n2 {
+        display: flex;
+        margin-left: 30px;
+        /* margin-top: 15px; */
+        margin-bottom: 10px;
+        font-size: 15px;
+    }
+
+    #n21 {
+        margin-top: 15px;
+        font-size: 20px;
+        margin-right: 10px;
+    }
+
+    #n22 {
+        margin-top: 10px;
+    }
+
+    #n3 {
+        display: flex;
+        margin-left: 30px;
+        /* margin-top: 15px; */
+        margin-bottom: 10px;
+        font-size: 15px;
+    }
+
+    #n31 {
+        margin-top: 15px;
+        font-size: 20px;
+        margin-right: 10px;
+    }
+
+    #n32 {
+        margin-top: 10px;
+    }
+
+    #n4 {
+        display: flex;
+        margin-left: 30px;
+        /* margin-top: 15px; */
+        margin-bottom: 10px;
+        font-size: 15px;
+    }
+
+    #n41 {
+        margin-top: 15px;
+        font-size: 20px;
+        margin-right: 10px;
+    }
+
+    #n42 {
+        margin-top: 10px;
+    }
+
+    #n5 {
+        display: flex;
+        margin-left: 30px;
+        /* margin-top: 15px; */
+        margin-bottom: 10px;
+        font-size: 15px;
+    }
+
+    #n51 {
+        margin-top: 15px;
+        font-size: 20px;
+        margin-right: 10px;
+    }
+
+    #n52 {
+        margin-top: 10px;
+    }
+
+    #n6 {
+        display: flex;
+        margin-left: 140px;
+        /* margin-top: 15px; */
+        margin-bottom: 10px;
+        font-size: 15px;
+    }
+
+    #n61 {
+        margin-top: 15px;
+        font-size: 20px;
+        margin-right: 10px;
+    }
+
+    #n62 {
+        margin-top: 10px;
+    }
+
+    .s2 {
+        width: 100%;
+        height: 100px;
+        background: black;
+        color: rgb(229, 146, 7);
+        cursor: pointer;
+        display: flex;
+    }
+
+    #img1 {
+        margin-left: 400px;
+    }
+
+    #a1 {
+        position: absolute;
+        background: black;
+        color: aliceblue;
+        width: 200px;
+        padding: 10px;
+        padding-left: 20px;
+        display: none;
+        z-index: 1;
+    }
+
+    h5 {
+        padding: 10px;
+    }
+
+    h5:hover {
+        color: rgba(244, 158, 9, 0.609);
+    }
+
+    #a {
+        margin-top: 50px;
+        margin-left: 20px;
+    }
+
+    #b {
+        margin-top: 50px;
+        margin-left: 50px;
+    }
+
+    #b1 {
+        position: absolute;
+        background: black;
+        color: aliceblue;
+        width: 180px;
+        padding: 10px;
+        padding-left: 20px;
+        display: none;
+        z-index: 1;
+    }
+
+    #c {
+        margin-left: 50px;
+        margin-top: 50px;
+    }
+
+    #e {
+        margin-top: 50px;
+        margin-left: 50px;
+    }
+
+    #e1 {
+        position: absolute;
+        background: black;
+        color: aliceblue;
+        width: 180px;
+        padding: 10px;
+        padding-left: 20px;
+        display: none;
+        margin-left: 40px;
+        position: absolute;
+        z-index: 1;
+    }
+
+    #f {
+        margin-left: 50px;
+        margin-top: 50px;
+    }
+
+    #c1 {
+        background: rgb(13, 13, 13);
+        color: aliceblue;
+        width: 500px;
+        padding: 40px;
+        margin-left: -20px;
+        display: none;
+        position: absolute;
+        z-index: 1;
+    }
+
+    #c2 {
+        display: flex;
+
+    }
+
+    #cc {
+        display: flex;
+    }
+
+    #c111,
+    #c121,
+    #c131,
+    #c141,
+    #c151,
+    #c161 {
+        padding-right: 100px;
+    }
+
+    #c112,
+    #c122,
+    #c132,
+    #c142,
+    #c152,
+    #c162 {
+        width: 100px;
+        text-align: center;
+    }
+
+    #e {
+        position: relative;
+    }
+
+    #u {
+        width: 500px;
+        margin-left: 80px;
+    }
+
+    #uu {
+        width: 500px;
+    }
+
+    #uu11 {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    #uu12 {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .uu13 {
+        margin-top: 10px;
+        margin-left: 180px;
+        font-size: 15px;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        background: rgba(244, 158, 9, 0.609);
+        color: aliceblue;
+    }
+
+    #ee {
+        display: flex;
+        margin-top: 50px;
+    }
+
+    #modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        text-align: center;
+        padding-top: 100px;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        background-color: rgb(0, 0, 0);
+        background-color: rgba(0, 0, 0, 0.4);
+        overflow: auto;
+    }
+
+    #mc {
+        background-color: #fefefe;
+        margin: auto;
+        padding: 30px 35px 100px 35px;
+        border: 1px solid #888;
+        width: 50%;
+    }
+
+    #x {
+        float: right;
+        font-size: 30px;
+        font-weight: bold;
+        color: #aaa;
+    }
+
+    #x:hover {
+        cursor: pointer;
+        color: black;
+    }
+
+    #modal input {
+        width: 40%;
+        height: 40px;
+        border-radius: 20px;
+        font-size: 15px;
+    }
+
+    .s10 {
+        background: black;
+    }
+
+    #f11 {
+        padding-top: 40px;
+        padding-left: 300px;
+        height: 50px;
+        padding-bottom: 30px;
+    }
+
+    #f31 {
+        padding-top: 40px;
+        height: 50px;
+        padding-bottom: 30px;
+    }
+
+    #f21 {
+        padding-top: 40px;
+        padding-left: 100px;
+        height: 50px;
+        padding-bottom: 30px;
+    }
+
+    #f {
+        display: flex;
+    }
+
+    .f {
+        display: flex;
+    }
+
+    #ff {
+        margin-top: 100px;
+        font-size: 25px;
+        padding-left: 30px;
+        padding-right: 30px;
+        border-radius: 20px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        background: rgb(239, 143, 0);
+        color: aliceblue;
+    }
+
+    #ff1 {
+        margin-left: 10px;
+        font-size: 25px;
+        padding-left: 20px;
+        padding-right: 20px;
+        border-radius: 20px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        background: black;
+        color: aliceblue;
+    }
+
+    #g {
+        display: flex;
+    }
+
+    #g1 {
+        height: 100px;
+        margin-left: 10px;
+        margin-top: 100px;
+    }
+
+    #g4 {
+        margin-left: 100px;
+        height: 300px;
+    }
+
+    #g2 {
+        margin-top: 150px;
+        margin-left: 100px;
+    }
+
+    #g3 {
+        margin-left: 100px;
+        margin-top: 150px;
+    }
+</style>
+
+<body>
+    <section id="s">
+        <!-- Nav1 Start -->
+
+        <section id="s1">
+            <div id="n1">
+                <i class="fa fa-sticky-note" aria-hidden="true" id="n11" color="rgb(229,146,7)"></i>
+
+                <h5 id="n12">BRAND PHILOSOPHY</h5>
+            </div>
+            <div id="n2">
+                <i class="fa fa-user" aria-hidden="true" id="n21"></i>
+                <h5 id="n22">CONTACT US</h5>
+
+            </div>
+            <div id="n3">
+                <i class="fa fa-download" aria-hidden="true" id="n31"></i>
+                <h5 id="n32">INVESTOR RELATIONS</h5>
+            </div>
+            <div id="n4">
+                <i class="fa fa-arrow-circle-right" aria-hidden="true" id="n41"></i>
+                <h5 id="n42">CAREERS</h5>
+
+            </div>
+            <div id="n5">
+                <i class="fa fa-search" aria-hidden="true" id="n51"></i>
+                <h5 id="n52">SEARCH</h5>
+
+            </div>
+            <div id="n6">
+                <i class="fa fa-cart-plus" aria-hidden="true" id="n61"></i>
+                <h5 id="n62">E-SHOP</h5>
+            </div>
+        </section>
+
+        <!--Nav1 End  -->
+
+
+        <!-- Nav2 start -->
+
+
+        <section class="s2" style="position: relative;">
+
+            <div>
+                <a href="http://127.0.0.1:3000/index.html"> <img src="image/img1.jpg" alt="" id="img1">
+            </div></a>
+
+            <div id="d1">
+                <div id="a">
+                    <a href="http://127.0.0.1:3000/V-Guard.html"
+                        style="text-decoration: none;         color: rgb(229, 146, 7);">
+                        <h3>ABOUT V-GUARD</h3>
+                    </a>
+                </div>
+                <div id="a1">
+                    <h5>BRAND PHILOSOPHY</h5>
+                    <h5>V-GUARD STORY</h5>
+                    <h5>VISION & MISSION</h5>
+                    <h5>FOUNDER'S PROFILE</h5>
+                    <h5>MILESTONES</h5>
+                    <h5>MANAGING DIRECTOR'S</h5>
+                    <h5>LEADERSHIP</h5>
+                </div>
+            </div>
+
+            <div id="d2">
+                <div id="b">
+                    <a href="http://127.0.0.1:3000/V-Guard1.html"
+                        style="text-decoration: none;color: rgb(229, 146, 7);">
+                        <h3>CSR</h3>
+                    </a>
+                </div>
+                <div id="b1">
+                    <h5>HEALTH CARE</h5>
+                    <h5>EDU-CARE AND SKILL</h5>
+                    <h5>BUILD INDIA</h5>
+                    <h5>CSR POLICY</h5>
+                    <h5>CSR REPORT 22-23</h5>
+                    <h5>CSR REPORT 21-22</h5>
+                    <h5>CSR REPORT 20-21</h5>
+                </div>
+
+            </div>
+
+
+            <div id="d4">
+                <div id="c">
+                    <h3>DEALER & SERVICE NETWORK</h3>
+                </div>
+                <div id="c1">
+
+                    <div id="c2">
+                        <div id="c11">
+                            <img src="image/i2.png" alt="" id="c111">
+                            <h5 id="c112">VOLTAGE STABILIZERS</h5>
+                        </div>
+                        <div id="c12">
+                            <img src="image/i3.png" alt="" id="c121">
+                            <h5 id="c122">INVERTER,INVERTER BATTERIES</h5>
+                        </div>
+                        <div id="c13">
+                            <img src="image/i4.png" alt="" id="c131">
+                            <h5 id="c132">ELECTRIC,WATER HEATER</h5>
+                        </div>
+                    </div>
+                    <div id="cc">
+                        <div id="c14">
+                            <img src="image/i5.png" alt="" id="c141">
+                            <h5 id="c142">WIRES AND CABLES</h5>
+                        </div>
+                        <div id="c15">
+                            <img src="image/i6.png" alt="" id="c151">
+                            <h5 id="c152">FANS</h5>
+                        </div>
+                        <div id="c16">
+                            <img src="image/i7.png" alt="" id="c161">
+                            <h5 id="c162">KITCHEN APPLIANCES</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div id="d3">
+                <div id="e">
+                    <h3>CUSTOMER CARE</h3>
+                </div>
+                <div id="e1">
+                    <h5>CUSTOMER CARE HOME</h5>
+                    <h5>REGISTER COMPLAINT</h5>
+                    <h5>PRODUCT ENQUIRY</h5>
+                    <h5>REGISTER PRODUCT</h5>
+                    <h5>INSTALLATION REQUEST</h5>
+                    <h5>PRODUCT AUTHENTICATION</h5>
+                    <h5>CONTACT US</h5>
+                </div>
+            </div>
+
+
+            <div id="f">
+                <h3>FAQS</h3>
+            </div>
+
+        </section>
+
+        <!-- Add to card start -->
+
+        <section class="e">
+            <div id="ee">
+                <div id="u">
+                    <img src="image1/img9.jpg" alt="" id="uu">
+                    <div id="uu1">
+                        <h5 id="uu11">STORAGE WATER HEATER</h5>
+                        <h5 id="uu12">[6 LITRES AND ABOVE]</h5>
+                        <button class="uu13" onclick="ab()">BUY NOW</button>
+                    </div>
+                </div>
+                <div id="u">
+                    <img src="image1/img10.jpg" alt="" id="uu">
+                    <div id="uu1">
+                        <h5 id="uu11">INSTANT WATER HEATER</h5>
+                        <h5 id="uu12">[1 LITRES TO 3 LITRES]</h5>
+                        <button class="uu13" onclick="ab()">BUY NOW</button>
+                    </div>
+                </div>
+                <div id="u">
+                    <img src="image1/img11.jpg" alt="" id="uu">
+                    <div id="uu1">
+                        <h5 id="uu11">SOLAR WATER HEATERS
+                        </h5>
+                        <h5 id="uu12">[5 LITRES TO 3 LITRES]</h5>
+                        <button class="uu13" onclick="ab()">BUY NOW</button>
+                    </div>
+                </div>
+            </div>
+            <div id="ee">
+                <div id="u">
+                    <img src="image1/img12.jpg" alt="" id="uu">
+                    <div id="uu1">
+                        <h5 id="uu11">GAS WATER HEATERS
+                        </h5>
+                        <h5 id="uu12">[7 LITRES AND ABOVE]</h5>
+                        <button class="uu13" onclick="ab()">BUY NOW</button>
+                    </div>
+                </div>
+                <div id="u">
+                    <img src="image1/img13.jpg" alt="" id="uu">
+                    <div id="uu1">
+                        <h5 id="uu11">IMMERSION HEATER RODS
+                        </h5>
+                        <h5 id="uu12">[1 LITRES TO 3 LITRES]</h5>
+                        <button class="uu13" onclick="ab()">BUY NOW</button>
+                    </div>
+                </div>
+                <div id="u">
+                    <img src="image1/img14.jpg" alt="" id="uu">
+                    <div id="uu1">
+                        <h5 id="uu11">ROOM HEATERS
+
+                        </h5>
+                        <h5 id="uu12">[5 LITRES TO 3 LITRES]</h5>
+                        <button class="uu13" onclick="ab()">BUY NOW</button>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <div id="ee">
+                <div id="u">
+                    <img src="image1/10001.png" alt="" id="uu" width="80px" height="250px">
+                    <div id="uu1">
+                        <h5 id="uu11">GAS WATER HEATERS
+                        </h5>
+                        <h5 id="uu12">[7 LITRES AND ABOVE]</h5>
+                        <button class="uu13" onclick="ab()">BUY NOW</button>
+                    </div>
+                </div>
+                <div id="u">
+                    <img src="image1/10002.png" alt="" id="uu" width="80px" height="250px">
+                    <div id="uu1">
+                        <h5 id="uu11">IMMERSION HEATER RODS
+                        </h5>
+                        <h5 id="uu12">[1 LITRES TO 3 LITRES]</h5>
+                        <button class="uu13" onclick="ab()">BUY NOW</button>
+                    </div>
+                </div>
+                <div id="u">
+                    <img src="image1/10004 (2).jpg" alt="" id="uu" width="80px" height="250px">
+                    <div id="uu1">
+                        <h5 id="uu11">ROOM HEATERS
+
+                        </h5>
+                        <h5 id="uu12">[5 LITRES TO 3 LITRES]</h5>
+                        <button class="uu13" onclick="ab()">BUY NOW</button>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Add to card end -->
+
+        <!-- footer start -->
+        <section class="s10">
+            <div id="f">
+                <div id="f1" style="display: flex;">
+                    <img src="image/i8.png" alt="" id="f11">
+                    <div style="position: absolute;">
+                        <p style="color:white; font-size: 25px; margin-left: 380px;margin-top:30px">Toll Free</p>
+                        <p style="color: aliceblue;margin-left: 380px; font-size: 25px;">1800 103 1300</p>
+                    </div>
+                </div>
+                <div id="f2" style="display: flex;margin-left: 300px;">
+                    <img src="image/i9.png" alt="" id="f21">
+                    <div style="margin-left: 30px;margin-top: 30px;">
+                        <p style="font-size: 25px;color: white;">Toll Free</p>
+                        <p style="font-size: 25px;color: white;">1800 4590 3210</p>
+                    </div>
+                </div>
+                <div id="f3" style="display: flex;margin-left: 300px;">
+                    <img src="image/i8.png" alt="" id="f31">
+                    <div style="margin-left: 30px; margin-top: 30px;">
+                        <p style="font-size: 25px;color: white;">Toll Free</p>
+                        <p style="font-size: 25px;color: white;">1800 4590 3210</p>
+                    </div>
+                </div>
+            </div>
+            <div style="color: #f0f8ff;" class="f">
+                <div style="padding: 80px; margin-left: 100px;">
+                    <p style="font-size: 25px;">Products</p>
+                    <p style="color: rgb(184, 220, 220); font-size: 20px;">ZENORA SERIES</p>
+                    <p style="color: rgb(184, 220, 220); font-size: 20px;">REJIVE SERIES</p>
+                    <p style="color: rgb(184, 220, 220); font-size: 20px;">Compare</p>
+                </div>
+                <div style="padding: 80px;">
+                    <p style="font-size: 25px;">Why V-Guard</p>
+                    <p style="color: rgb(184, 220, 220); font-size: 20px;">Made For INdian Water Conditions</p>
+                    <p style="color: rgb(184, 220, 220); font-size: 20px;">Trust Meets Affordability</p>
+                    <p style="color: rgb(184, 220, 220); font-size: 20px;">Ultra Convenient Service</p>
+                    <p style="color: rgb(184, 220, 220); font-size: 20px;">4 Decades Legacy</p>
+                </div>
+                <div style="padding: 80px;">
+                    <p style="font-size: 25px;">Support</p>
+                    <p style="color: rgb(184, 220, 220); font-size: 20px;">Request Service or Installation</p>
+                    <p style="color: rgb(184, 220, 220);font-size: 20px;">Warranty & AWS Plans</p>
+                    <p style="color: rgb(184, 220, 220); font-size: 20px;">Register A Complaint</p>
+                    <p style="color: rgb(184, 220, 220); font-size: 20px;">FAQS</p>
+                    <p style="color: rgb(184, 220, 220);font-size: 20px;">Terms & Conditions</p>
+                </div>
+                <div style="padding: 80px;">
+                    <button id="ff"> What to buy</button><br><br><br><br>
+                    <button id="ff1">Contact us</button>
+                </div>
+            </div>
+            <div id="g">
+                <img src="image/img1.jpg" alt="" id="g1">
+                <p style="color: #f0f8ff;" id="g2">Copyright © 2020 V-Guard Industries Ltd. All rights reserved.</p>
+                <p style="color: #f0f8ff;" id="g3">Privacy Policy | Terms of Use | Disclaimer</p>
+                <img src="image/i10.png" alt="" id="g4">
+            </div>
+        </section>
+
+
+
+
+
+        <!-- footer end -->
+
+        <!-- model start -->
+
+        <div id="modal">
+            <div id="mc">
+                <span id="x" onclick="x()">&times;</span>
+                <h2>START YOUR ORDER</h2><br><br>
+                <img src="image1/qr_test_cN2dTd6TvbfS8dqfYY.png" alt="" style="height: 200px;"> <br><br>
+                <stripe-buy-button buy-button-id="buy_btn_1OGxOaSBdiHBLqBc8MbJPRC6"
+                    publishable-key="pk_test_51OGxHfSBdiHBLqBcRzzjLXJhNnO0F6K3NaiN8tkoRDmJYWiGFMe50GQPuxlzssFFnYStix9nhjOg2m6HhFBnvaVJ006Ut3SjrF">
+                </stripe-buy-button>
+
+            </div>
+        </div>
+
+
+        <!-- model end -->
+</body>
+<script>
+
+    $(document).ready(function () {
+        $('#a').mouseenter(function () {
+            $('#a1').slideDown()
+        })
+        $('#d1').mouseleave(function () {
+            $('#a1').slideUp()
+        })
+
+    })
+    $(document).ready(function () {
+        $('#b').mouseenter(function () {
+            $('#b1').slideDown()
+        })
+        $('#d2').mouseleave(function () {
+            $('#b1').slideUp()
+        })
+
+    })
+    $(document).ready(function () {
+        $('#e').mouseenter(function () {
+            $('#e1').slideDown()
+        })
+        $('#d3').mouseleave(function () {
+            $('#e1').slideUp()
+        })
+
+    })
+    $(document).ready(function () {
+        $('#c').mouseenter(function () {
+            $('#c1').slideDown()
+        })
+        $('#d4').mouseleave(function () {
+            $('#c1').slideUp()
+        })
+
+    })
+
+    $(document).ready(function () {
+        $('#rrr').mouseenter(function () {
+            $('#r2').slideDown()
+        })
+        $('#r').mouseleave(function () {
+            $('#r2').slideUp()
+        })
+
+    })
+    $(document).ready(function () {
+        $('#rrr1').mouseenter(function () {
+            $('#r3').slideDown()
+        })
+        $('#r4').mouseleave(function () {
+            $('#r3').slideUp()
+        })
+
+    })
+    $(document).ready(function () {
+        $('#rrr2').mouseenter(function () {
+            $('#r6').slideDown()
+        })
+        $('#r5').mouseleave(function () {
+            $('#r6').slideUp()
+        })
+
+    })
+    function ab() {
+        var modal = document.getElementById("modal")
+        modal.style.display = "block"
+    }
+    function x() {
+        var modal = document.getElementById("modal")
+        modal.style.display = "none"
+    }
+    window.onclick = function (e) {
+        if (e.target == modal) {
+            modal.style.display = "none"
+        }
+    }
+</script>
+
+</html>

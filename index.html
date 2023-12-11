@@ -1,0 +1,1627 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vguard</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="
+    https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js
+    "></script>
+    <link href="
+    https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
+    " rel="stylesheet">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js">
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+    }
+
+    #s {
+        position: relative;
+    }
+
+    #s1 {
+        display: flex;
+        width: 100%;
+        height: 50px;
+        background: rgb(13, 13, 13);
+        color: rgb(229, 146, 7);
+        cursor: pointer;
+    }
+
+    #n1 {
+        display: flex;
+        margin-left: 400px;
+        /* margin-top: 15px; */
+        margin-bottom: 10px;
+        font-size: 15px;
+    }
+
+    #n11 {
+        margin-top: 15px;
+        font-size: 20px;
+        margin-right: 10px;
+    }
+
+    #n12 {
+        margin-top: 10px;
+    }
+
+    #n12:hover {
+        color: aliceblue;
+    }
+
+    #n22:hover {
+        color: aliceblue;
+    }
+
+    #n32:hover {
+        color: aliceblue;
+    }
+
+    #n42:hover {
+        color: aliceblue;
+    }
+
+    #n52:hover {
+        color: aliceblue;
+    }
+
+    #n62:hover {
+        color: aliceblue;
+    }
+
+    #n2 {
+        display: flex;
+        margin-left: 30px;
+        /* margin-top: 15px; */
+        margin-bottom: 10px;
+        font-size: 15px;
+    }
+
+    #n21 {
+        margin-top: 15px;
+        font-size: 20px;
+        margin-right: 10px;
+    }
+
+    #n22 {
+        margin-top: 10px;
+    }
+
+    #n3 {
+        display: flex;
+        margin-left: 30px;
+        /* margin-top: 15px; */
+        margin-bottom: 10px;
+        font-size: 15px;
+    }
+
+    #n31 {
+        margin-top: 15px;
+        font-size: 20px;
+        margin-right: 10px;
+    }
+
+    #n32 {
+        margin-top: 10px;
+    }
+
+    #n4 {
+        display: flex;
+        margin-left: 30px;
+        /* margin-top: 15px; */
+        margin-bottom: 10px;
+        font-size: 15px;
+    }
+
+    #n41 {
+        margin-top: 15px;
+        font-size: 20px;
+        margin-right: 10px;
+    }
+
+    #n42 {
+        margin-top: 10px;
+    }
+
+    #n5 {
+        display: flex;
+        margin-left: 30px;
+        /* margin-top: 15px; */
+        margin-bottom: 10px;
+        font-size: 15px;
+    }
+
+    #n51 {
+        margin-top: 15px;
+        font-size: 20px;
+        margin-right: 10px;
+    }
+
+    #n52 {
+        margin-top: 10px;
+    }
+
+    #n6 {
+        display: flex;
+        margin-left: 140px;
+        /* margin-top: 15px; */
+        margin-bottom: 10px;
+        font-size: 15px;
+    }
+
+    #n61 {
+        margin-top: 15px;
+        font-size: 20px;
+        margin-right: 10px;
+    }
+
+    #n62 {
+        margin-top: 10px;
+    }
+
+    .s2 {
+        width: 100%;
+        height: 100px;
+        background: black;
+        color: rgb(229, 146, 7);
+        cursor: pointer;
+        display: flex;
+    }
+
+    #img1 {
+        margin-left: 400px;
+    }
+
+    #a1 {
+        position: absolute;
+        background: black;
+        color: aliceblue;
+        width: 200px;
+        padding: 10px;
+        padding-left: 20px;
+        display: none;
+        z-index: 1;
+    }
+
+    h5 {
+        padding: 10px;
+    }
+
+    h5:hover {
+        color: rgba(244, 158, 9, 0.609);
+    }
+
+    #a {
+        margin-top: 50px;
+        margin-left: 20px;
+    }
+
+    #b {
+        margin-top: 50px;
+        margin-left: 50px;
+    }
+
+    #b1 {
+        position: absolute;
+        background: black;
+        color: aliceblue;
+        width: 180px;
+        padding: 10px;
+        padding-left: 20px;
+        display: none;
+        z-index: 1;
+    }
+
+    #c {
+        margin-left: 50px;
+        margin-top: 50px;
+    }
+
+    #e {
+        margin-top: 50px;
+        margin-left: 50px;
+    }
+
+    #e1 {
+        position: absolute;
+        background: black;
+        color: aliceblue;
+        width: 180px;
+        padding: 10px;
+        padding-left: 20px;
+        display: none;
+        margin-left: 40px;
+        position: absolute;
+        z-index: 1;
+    }
+
+    #f {
+        margin-left: 50px;
+        margin-top: 50px;
+    }
+
+    #c1 {
+        background: rgb(13, 13, 13);
+        color: aliceblue;
+        width: 500px;
+        padding: 40px;
+        margin-left: -20px;
+        display: none;
+        position: absolute;
+        z-index: 1;
+    }
+
+    #c2 {
+        display: flex;
+
+    }
+
+    #cc {
+        display: flex;
+    }
+
+    #c111,
+    #c121,
+    #c131,  
+    #c141,
+    #c151,
+    #c161 {
+        padding-right: 100px;
+    }
+
+    #c112,
+    #c122,
+    #c132,
+    #c142,
+    #c152,
+    #c162 {
+        width: 100px;
+        text-align: center;
+    }
+
+    #p1 {
+        position: absolute;
+    }
+
+    #p2 {
+        position: absolute;
+    }
+
+    #p21 {
+        font-size: 50px;
+        margin-top: 200px;
+        margin-left: 70px;
+    }
+
+    #p22 {
+        margin-left: 70px;
+        font-size: 25px;
+        width: 600px;
+    }
+
+    #p23 {
+        margin-top: 30px;
+        margin-left: 200px;
+        border-radius: 30px;
+        padding: 20px;
+        padding-left: 30px;
+        padding-right: 30px;
+        background: rgb(243, 235, 224);
+    }
+
+    #p1 {
+        height: 700px;
+        width: 100%;
+        position: absolute;
+        left: 50%;
+        margin-top: 340px;
+        transform: translate(-50%, -50%);
+        overflow: hidden;
+        animation: zoom-out 3s linear infinite;
+    }
+
+    #p11 {
+        animation: zoom-out 3s linear infinite;
+        height: 700px;
+        width: 100%;
+        position: absolute;
+        left: 50%;
+        margin-top: 340px;
+        transform: translate(-50%, -50%);
+        overflow: hidden;
+    }
+
+    #p12 {
+        animation: zoom-out 3s linear infinite;
+        height: 700px;
+        width: 100%;
+        position: absolute;
+        left: 50%;
+        margin-top: 340px;
+        transform: translate(-50%, -50%);
+        overflow: hidden;
+    }
+
+    #p13 {
+        height: 700px;
+        width: 100%;
+        position: absolute;
+        left: 50%;
+        margin-top: 340px;
+        transform: translate(-50%, -50%);
+        overflow: hidden;
+        animation: zoom-out 3s linear infinite;
+
+    }
+
+    #p31 {
+        position: absolute;
+        color: aliceblue;
+        font-size: 50px;
+        margin-top: 260px;
+        width: 500px;
+        margin-left: 700px;
+        text-align: center;
+        animation: textup 12s linear infinite;
+    }
+
+    #p32 {
+        animation-delay: 0s;
+        position: absolute;
+        color: aliceblue;
+        font-size: 50px;
+        margin-top: 260px;
+        width: 500px;
+        margin-left: 700px;
+        text-align: center;
+    }
+
+    #p33 {
+        animation-delay: 0s;
+        position: absolute;
+        color: aliceblue;
+        font-size: 50px;
+        margin-top: 260px;
+        width: 500px;
+        margin-left: 700px;
+        text-align: center;
+    }
+
+    #pp {
+        animation: slide2 10s linear infinite;
+    }
+
+    #pp2 {
+        animation: slide3 10s linear infinite;
+    }
+
+    #pp3 {
+        animation: slide4 10s linear infinite;
+    }
+
+    #pp4 {
+        animation: slide5 10s linear infinite;
+    }
+
+    #p2 {
+        animation: textup3 12s linear infinite;
+        transform: translateY(100px);
+        animation-delay: 0s;
+    }
+
+    #p3 {
+        animation: textup1 12s linear infinite;
+        transform: translateY(100px);
+        animation-delay: 3s;
+    }
+
+    #p4 {
+        animation: textup2 12s linear infinite;
+        transform: translateY(100px);
+        animation-delay: 6s;
+    }
+
+    #p5 {
+        animation: textup4 12s linear infinite;
+        transform: translateY(100px);
+        animation-delay: 9s;
+    }
+
+    .s3 {
+        z-index: -1;
+    }
+
+    #q {
+        display: flex;
+    }
+
+    #q11 {
+        width: 48%;
+        position: absolute;
+        margin-left: 20px;
+
+    }
+
+    #q12 {
+        position: absolute;
+        color: aliceblue;
+        text-align: center;
+        font-size: 40px;
+        width: 400px;
+        margin-top: 400px;
+        margin-left: 300px;
+
+    }
+
+    #q22 {
+        position: absolute;
+        margin-left: 1200px;
+        color: aliceblue;
+        text-align: center;
+        font-size: 40px;
+        width: 400px;
+        margin-top: 400px;
+    }
+
+    #q21 {
+        width: 48%;
+        position: absolute;
+        margin-left: 955px;
+    }
+
+    .s4 {
+        position: relative;
+        margin-top: 720px;
+    }
+
+    #rr {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 30px;
+    }
+
+    #r {
+        height: 300px;
+        background: black;
+        margin-left: 30px;
+        box-shadow: 10px 20px rgba(82, 23, 23, 0.5);
+        position: relative;
+        transition: 0.3s ease-in-out;
+    }
+
+    #r:hover {
+        height: 500px;
+    }
+
+    #r4:hover {
+        height: 550px;
+    }
+
+    #r5:hover {
+        height: 550px;
+    }
+
+    #r4 {
+        height: 300px;
+        position: relative;
+        background: black;
+        margin-left: 40px;
+        box-shadow: 10px 20px rgba(82, 23, 23, 0.5);
+
+    }
+
+    #r5 {
+        height: 300px;
+        position: relative;
+        background: black;
+        margin-left: 40px;
+        box-shadow: 10px 20px rgba(82, 23, 23, 0.5);
+
+    }
+
+    #r1 {
+        margin-left: 20px;
+        padding-right: 20px;
+        padding-top: 30px;
+        width: 500px;
+    }
+
+    #r11 {
+        width: 450px;
+        height: 250px;
+        margin-left: 40px;
+        padding-right: 40px;
+        padding-top: 30px;
+    }
+
+    #r12 {
+        width: 450px;
+        height: 250px;
+        margin-left: 40px;
+        padding-right: 40px;
+        padding-top: 30px;
+    }
+
+    #r21 {
+        text-align: center;
+        font-size: 30px;
+        color: aliceblue;
+    }
+
+    #r21:hover {
+        color: rgb(229, 146, 7);
+
+    }
+
+    #r31:hover {
+        color: rgb(229, 146, 7);
+
+    }
+
+    #r61:hover {
+        color: rgb(229, 146, 7);
+
+    }
+
+    #r31 {
+        text-align: center;
+        font-size: 30px;
+        color: aliceblue;
+    }
+
+    #r61 {
+        text-align: center;
+        font-size: 30px;
+        color: aliceblue;
+    }
+
+    #r22 {
+        text-align: center;
+        width: 400px;
+        font-size: 20px;
+        color: aliceblue;
+        margin-left: 70px;
+        margin-top: 30px;
+    }
+
+    #r32 {
+        text-align: center;
+        width: 400px;
+        font-size: 20px;
+        color: aliceblue;
+        margin-left: 70px;
+        margin-top: 30px;
+
+    }
+
+    #r62 {
+        text-align: center;
+        width: 400px;
+        font-size: 20px;
+        color: aliceblue;
+        margin-left: 70px;
+        margin-top: 30px;
+    }
+
+    #r32:hover {
+        color: rgb(218, 146, 21, 0.759);
+
+    }
+
+    #r62:hover {
+        color: rgb(218, 146, 21, 0.759);
+
+    }
+
+    #r22:hover {
+
+        color: rgb(218, 146, 21, 0.759);
+    }
+
+    #rrr {
+        position: relative;
+        height: 300px;
+        width: 550px;
+    }
+
+    #rrr1 {
+        position: relative;
+        height: 300px;
+        width: 550px;
+    }
+
+    #rrr2 {
+        position: relative;
+        height: 300px;
+        width: 550px;
+    }
+
+
+    #r2 {
+        display: none;
+    }
+
+    #s5 {
+        margin-top: 900px;
+        position: relative;
+    }
+
+    .s6 {
+        position: relative;
+    }
+
+    #t1 {
+        position: absolute;
+        height: 600px;
+        overflow: hidden;
+        width: 100%;
+
+    }
+
+
+
+    #t2 {
+        position: absolute;
+        margin-left: 200px;
+        margin-top: 200px;
+        animation: up 12s linear infinite;
+        transform: translateY(100px);
+    }
+
+    #t21 {
+        font-size: 50px;
+    }
+
+    #t22 {
+        font-size: 30px;
+        margin-top: 20px;
+    }
+
+    #t23 {
+        border-radius: 10px;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        font-size: 18px;
+        margin-top: 40px;
+    }
+
+    #t23:hover {
+        background: rgba(128, 128, 128, 0.407);
+        color: aliceblue;
+    }
+
+    .s7 {
+        position: relative;
+        margin-top: 680px;
+    }
+
+    #u {
+        width: 320px;
+        height: 250px;
+        position: absolute;
+    }
+
+    #u1 {
+        width: 320px;
+        height: 250px;
+        position: absolute;
+
+    }
+
+    #u2 {
+        width: 320px;
+        height: 250px;
+        position: absolute;
+
+    }
+
+    #u3 {
+        width: 320px;
+        height: 250px;
+        position: absolute;
+
+    }
+
+    #u4 {
+        margin-left: 50px;
+        width: 320px;
+        height: 250px;
+        position: absolute;
+    }
+
+    #u5 {
+        width: 250px;
+        height: 250px;
+        margin-left: 50px;
+        position: absolute;
+    }
+
+    .container {
+        padding-top: 250px;
+        width: 350px;
+        height: 200px;
+        position: relative;
+        margin-left: 55%;
+        perspective: 1000px;
+        transform-style: preserve-3d;
+        transform: rotateX(-10deg) rotateZ(-10deg);
+        animation: ror 20s linear infinite;
+    }
+
+    @keyframes ror {
+        50% {
+            transform: rotateX(30deg);
+        }
+
+        80% {
+            transform: rotateX(-30deg);
+        }
+    }
+
+    .images {
+        width: 100%;
+        position: absolute;
+        transform-style: preserve-3d;
+        animation: rotated 20s linear infinite;
+    }
+
+    @keyframes rotated {
+        100% {
+            transform: rotateY(360deg);
+        }
+    }
+
+    #u {
+        transform: rotateY(60deg) translateZ(300px);
+    }
+
+    #u1 {
+        transform: rotateY(120deg) translateZ(300px);
+    }
+
+    #u2 {
+        transform: rotateY(180deg) translateZ(300px);
+    }
+
+    #u3 {
+        transform: rotateY(240deg) translateZ(300px);
+    }
+
+    #u4 {
+        transform: rotateY(300deg) translateZ(300px);
+    }
+
+    #u5 {
+        transform: rotateY(360deg) translateZ(300px);
+    }
+
+    .s8 {
+        position: relative;
+        background: rgba(0, 0, 0, 0.433);
+        height: 800px;
+        width: 100%;
+        margin-top: 0px;
+        background-image: url('image/img20.jpg');
+    }
+
+    #tt2 {
+        padding-top: 260px;
+        padding-left: 150px;
+        position: absolute;
+    }
+
+    #tt21 {
+        font-size: 40px;
+    }
+
+    #tt22 {
+        font-size: 30px;
+        margin-top: 10px;
+    }
+
+    #tt23 {
+        font-size: 15px;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        border-radius: 10px;
+    }
+
+    .s10 {
+        background: black;
+    }
+
+    #f11 {
+        padding-top: 40px;
+        padding-left: 300px;
+        height: 50px;
+        padding-bottom: 30px;
+    }
+
+    #f31 {
+        padding-top: 40px;
+        height: 50px;
+        padding-bottom: 30px;
+    }
+
+    #f21 {
+        padding-top: 40px;
+        padding-left: 100px;
+        height: 50px;
+        padding-bottom: 30px;
+    }
+
+    #f {
+        display: flex;
+    }
+
+    .f {
+        display: flex;
+    }
+
+    #ff {
+        margin-top: 100px;
+        font-size: 25px;
+        padding-left: 30px;
+        padding-right: 30px;
+        border-radius: 20px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        background: rgb(239, 143, 0);
+        color: aliceblue;
+    }
+
+    #ff1 {
+        margin-left: 10px;
+        font-size: 25px;
+        padding-left: 20px;
+        padding-right: 20px;
+        border-radius: 20px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        background: black;
+        color: aliceblue;
+    }
+
+    #g {
+        display: flex;
+    }
+
+    #g1 {
+        height: 100px;
+        margin-left: 10px;
+        margin-top: 100px;
+    }
+
+    #g4 {
+        margin-left: 100px;
+        height: 300px;
+    }
+
+    #g2 {
+        margin-top: 150px;
+        margin-left: 100px;
+    }
+
+    #g3 {
+        margin-left: 100px;
+        margin-top: 150px;
+    }
+
+    @keyframes up {
+        10% {
+            transform: translateY(0px);
+        }
+
+        100% {
+            transform: translateY(0px);
+        }
+    }
+</style>
+</style>
+<style>
+    @keyframes textup3 {
+        10% {
+            transform: translateY(0px);
+        }
+
+        100% {
+            transform: translateY(0px);
+        }
+    }
+
+    @keyframes textup1 {
+        10% {
+            transform: translateY(0px);
+        }
+
+        100% {
+            transform: translateY(0px);
+        }
+    }
+
+    @keyframes textup2 {
+        10% {
+            transform: translateY(0px);
+        }
+
+        100% {
+            transform: translateY(0px);
+        }
+    }
+
+    @keyframes textup4 {
+        10% {
+            transform: translateY(0px);
+        }
+
+        100% {
+            transform: translateY(0px);
+        }
+    }
+
+    .s9 {
+        margin-left: 700px;
+    }
+
+    @keyframes slide1 {
+        0% {
+            visibility: visible;
+        }
+
+        25% {
+            visibility: hidden;
+        }
+
+        50% {
+            visibility: hidden;
+        }
+
+        75% {
+            visibility: hidden;
+        }
+
+        100% {
+            visibility: visible;
+        }
+
+    }
+
+    @keyframes slide2 {
+        0% {
+            visibility: hidden;
+        }
+
+        25% {
+            visibility: visible;
+        }
+
+        50% {
+            visibility: hidden;
+        }
+
+        75% {
+            visibility: hidden;
+        }
+
+        100% {
+            visibility: hidden;
+        }
+
+    }
+
+    @keyframes slide3 {
+        0% {
+            visibility: hidden;
+        }
+
+        25% {
+            visibility: hidden;
+        }
+
+        50% {
+            visibility: visible;
+        }
+
+        75% {
+            visibility: hidden;
+        }
+
+        100% {
+            visibility: hidden;
+        }
+
+    }
+
+    @keyframes slide4 {
+        0% {
+            visibility: hidden;
+        }
+
+        25% {
+            visibility: hidden;
+        }
+
+        50% {
+            visibility: hidden;
+        }
+
+        75% {
+            visibility: visible;
+        }
+
+        100% {
+            visibility: hidden;
+        }
+
+    }
+
+    @keyframes slide5 {
+        0% {
+            visibility: hidden;
+        }
+
+        25% {
+            visibility: hidden;
+        }
+
+        50% {
+            visibility: hidden;
+        }
+
+        75% {
+            visibility: hidden;
+        }
+
+        100% {
+            visibility: visible;
+        }
+
+    }
+
+    .preloader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+    }
+</style>
+
+<body>
+    <div class="preloader">
+        <img src="Water drop.gif" alt="Loading..." />
+    </div>
+    <section id="s">
+        <!-- Nav1 Start -->
+
+        <section id="s1">
+            <div id="n1">
+                <i class="fa fa-sticky-note" aria-hidden="true" id="n11" color="rgb(229,146,7)"></i>
+                <h5 id="n12">BRAND PHILOSOPHY</h5>
+            </div>
+            <div id="n2">
+                <i class="fa fa-user" aria-hidden="true" id="n21"></i>
+                <h5 id="n22">CONTACT US</h5>
+
+            </div>
+            <div id="n3">
+                <i class="fa fa-download" aria-hidden="true" id="n31"></i>
+                <h5 id="n32">INVESTOR RELATIONS</h5>
+            </div>
+            <div id="n4">
+                <i class="fa fa-arrow-circle-right" aria-hidden="true" id="n41"></i>
+                <h5 id="n42">CAREERS</h5>
+
+            </div>
+            <div id="n5">
+                <i class="fa fa-search" aria-hidden="true" id="n51"></i>
+                <h5 id="n52">SEARCH</h5>
+
+            </div>
+            <div id="n6">
+                <i class="fa fa-cart-plus" aria-hidden="true" id="n61"></i>
+                <h5 id="n62">E-SHOP</h5>
+            </div>
+        </section>
+
+        <!--Nav1 End  -->
+
+
+        <!-- Nav2 start -->
+
+
+        <section class="s2">
+
+            <div>
+                <a href="http://127.0.0.1:3000/index.html"> <img src="image/img1.jpg" alt="" id="img1">
+            </div></a>
+
+            <div id="d1">
+                <div id="a">
+                    <a href="http://127.0.0.1:3000/V-Guard.html" style="text-decoration: none;         color: rgb(229, 146, 7);
+                    ">
+                        <h3>ABOUT V-GUARD</h3>
+                    </a>
+                </div>
+                <div id="a1">
+                    <h5>BRAND PHILOSOPHY</h5>
+                    <h5>V-GUARD STORY</h5>
+                    <h5>VISION & MISSION</h5>
+                    <h5>FOUNDER'S PROFILE</h5>
+                    <h5>MILESTONES</h5>
+                    <h5>MANAGING DIRECTOR'S</h5>
+                    <h5>LEADERSHIP</h5>
+                </div>
+            </div>
+
+            <div id="d2">
+                <div id="b">
+                    <a href="http://127.0.0.1:3000/V-Guard1.html"
+                        style="text-decoration: none;         color: rgb(229, 146, 7);">
+                        <h3>CSR</h3>
+                    </a>
+                </div>
+                <div id="b1">
+                    <h5>HEALTH CARE</h5>
+                    <h5>EDU-CARE AND SKILL</h5>
+                    <h5>BUILD INDIA</h5>
+                    <h5>CSR POLICY</h5>
+                    <h5>CSR REPORT 22-23</h5>
+                    <h5>CSR REPORT 21-22</h5>
+                    <h5>CSR REPORT 20-21</h5>
+                </div>
+
+            </div>
+
+
+            <div id="d4">
+                <div id="c">
+                    <h3>DEALER & SERVICE NETWORK</h3>
+                </div>
+                <div id="c1">
+
+                    <div id="c2">
+                        <div id="c11">
+                            <img src="image/i2.png" alt="" id="c111">
+                            <h5 id="c112">VOLTAGE STABILIZERS</h5>
+                        </div>
+                        <div id="c12">
+                            <img src="image/i3.png" alt="" id="c121">
+                            <h5 id="c122">INVERTER,INVERTER BATTERIES</h5>
+                        </div>
+                        <div id="c13">
+                            <img src="image/i4.png" alt="" id="c131">
+                            <h5 id="c132">ELECTRIC,WATER HEATER</h5>
+                        </div>
+                    </div>
+                    <div id="cc">
+                        <div id="c14">
+                            <img src="image/i5.png" alt="" id="c141">
+                            <h5 id="c142">WIRES AND CABLES</h5>
+                        </div>
+                        <div id="c15">
+                            <img src="image/i6.png" alt="" id="c151">
+                            <h5 id="c152">FANS</h5>
+                        </div>
+                        <div id="c16">
+                            <img src="image/i7.png" alt="" id="c161">
+                            <h5 id="c162">KITCHEN APPLIANCES</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div id="d3">
+                <div id="e">
+                    <h3>CUSTOMER CARE</h3>
+                </div>
+                <div id="e1">
+                    <h5>CUSTOMER CARE HOME</h5>
+                    <h5>REGISTER COMPLAINT</h5>
+                    <h5>PRODUCT ENQUIRY</h5>
+                    <h5>REGISTER PRODUCT</h5>
+                    <h5>INSTALLATION REQUEST</h5>
+                    <h5>PRODUCT AUTHENTICATION</h5>
+                    <h5>CONTACT US</h5>
+                </div>
+            </div>
+
+
+            <div id="f">
+                <h3>FAQS</h3>
+            </div>
+
+        </section>
+
+
+        <!-- Nav2 end -->
+
+
+        <!-- Banner Start -->
+
+        <div data-aos="flip-left">
+
+            <section class="s3">
+
+                <div id="pp">
+                    <img src="image/img6.jpg" alt="" id="p1">
+                    <div id="p2">
+                        <h1 id="p21">Trust Meets Affordability</h1>
+                        <p id="p22">Because the access to pure water
+                            is more than a wish.Backed by a rewarding journey of empowering your tomorrows for over four
+                            decades,
+                            it's time to welcome 'Water Purifiers'
+                            to the V-Guard family.</p>
+                        <button id="p23">KNOW MORE</button>
+                    </div>
+                </div>
+
+                <div id="pp2">
+                    <img src="image/img3.jpg" alt="" id="p11">
+                    <div id="p3">
+                        <h1 id="p31">True Relations Are
+                            Built On Trust</h1>
+                    </div>
+                </div>
+
+                <div id="pp3">
+                    <img src="image/img4.jpg" alt="" id="p12">
+                    <div id="p4">
+                        <h1 id="p32">Because Trust Counts At Every Step</h1>
+                    </div>
+                </div>
+
+                <div id="pp4">
+                    <img src="image/img5.jpg" alt="" id="p13">
+                    <div id="p5">
+                        <h1 id="p33">Your Trust Because The True Filter</h1>
+                    </div>
+                </div>
+
+            </section>
+        </div>
+
+
+        <!-- Banner end -->
+
+        <!-- card start -->
+
+        <section class="s4">
+            <div data-aos="fade-up" data-aos-duration="3000" id="q">
+                <div id="q1">
+                    <img src="image/img7.jpg" alt="" id="q11">
+                    <h1 id="q12">Relive The
+                        Natural Taste</h1>
+                </div>
+                <div id="q2">
+                    <img src="image/img8.jpg" alt="" id="q21">
+                    <h1 id="q22">Mineral Enriched
+                        Alkaline Water</h1>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- card end -->
+
+        <!-- card1 start -->
+
+
+        <section id="s5">
+            <div id="rr">
+                <div data-aos="fade-right">
+
+                    <div id="r">
+                        <div data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
+
+                            <div id="rrr">
+                                <img src="image/img11.png" alt="" id="r1">
+                            </div>
+                        </div>
+                        <div id="r2">
+                            <h4 id="r21">Absolute Choice</h4>
+                            <p id="r22">Backed by a rewarding journey of empowering your tomorrows for over four
+                                decades,
+                                it's time
+                                to
+                                welcome.</p>
+                        </div>
+                    </div>
+                </div>
+                <div data-aos="zoom-in">
+
+                    <div id="r4">
+                        <div data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
+
+                            <div id="rrr1">
+                                <img src="image/img12.png" alt="" id="r11">
+                            </div>
+                        </div>
+                        <div id="r3">
+                            <h4 id="r31">Water Conditions</h4>
+                            <p id="r32">Exclusively made for India's tough water conditions, V-Guard Water Purifiers
+                                come in
+                                two
+                                series of advanced configurations - REJIVE & ZENORA.</p>
+                        </div>
+                    </div>
+                </div>
+                <div data-aos="fade-left">
+
+                    <div id="r5">
+                        <div data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
+                            <div id="rrr2">
+                                <img src="image/img13.png" alt="" id="r12">
+                            </div>
+                        </div>
+                        <div id="r6">
+                            <h4 id="r61">V-Guard</h4>
+                            <p id="r62">Supported with first-of-its-kind service, unmatched purification standards and a
+                                widespread
+                                network of dedicated and
+                                trained technicians.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        </div>
+
+        <!-- card1 end -->
+
+        <!-- card2 start -->
+        <div data-aos="zoom-in" style="margin-top: 40px;">
+            <section class="s6">
+                <div id="t">
+                    <div id="t1">
+                        <img src="image/img21.jpg" alt="" id="t11">
+                    </div>
+                    <div id="t2">
+                        <h1 id="t21">Tailor Suit Your Need</h1>
+                        <p id="t22">Because one size doesn't fit all</p>
+                        <button id="t23">Coming Soon</button>
+                    </div>
+                </div>
+        </div>
+        </div>
+    </section>
+
+    <section class="s7">
+        <div data-aos="zoom-in">
+
+            <div id="t">
+                <div id="t1">
+                    <img src="image/img22.jpg" alt="" id="t11">
+                </div>
+                <div id="t2">
+                    <h1 id="t21">Made for Indian
+                        Water Conditions</h1>
+                    <p id="t22">Because excellence lies in details
+                        Know More</p>
+                    <button id="t23">Know More</button>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+    <!-- card2 end -->
+
+    <!-- card3 start -->
+
+    <section class="s8" style="margin-top: 1300px; position: relative;">
+        <div id="tt2">
+            <h1 id="tt21">A Service That
+                Puts You First</h1>
+            <p id="tt22" style="margin-top: 30px;">Because your peace of mind is worth it
+            </p>
+            <button id="tt23" style="margin-top: 30px;">Know More</button>
+
+        </div>
+        <div class="container">
+            <div class="images">
+                <img src="image/img12.png" alt="" id="u">
+                <img src="image/img13.png" alt="" id="u1">
+                <img src="image/img14.jpeg" alt="" id="u2">
+                <img src="image/img15.jpeg" alt="" id="u3">
+                <img src="image/img17.jpeg" alt="" id="u4">
+                <img src="image/img18.jpeg" alt="" id="u5">
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- card3 end -->
+
+    <!-- gif start -->
+
+    <section class="s9" style="position: relative; margin-top: 50px;">
+        <div data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
+            <img src="image/hii.gif" alt="" height="600px" width="500px">
+        </div>
+
+    </section>
+    <!-- gif end -->
+
+    <!-- footer start -->
+
+
+    <section class="s10">
+        <div id="f">
+            <div id="f1" style="display: flex;">
+                <img src="image/i8.png" alt="" id="f11">
+                <div style="position: absolute;">
+                    <p style="color:white; font-size: 25px; margin-left: 380px;margin-top:30px">Toll Free</p>
+                    <p style="color: aliceblue;margin-left: 380px; font-size: 25px;">1800 103 1300</p>
+                </div>
+            </div>
+            <div id="f2" style="display: flex;margin-left: 300px;">
+                <img src="image/i9.png" alt="" id="f21">
+                <div style="margin-left: 30px;margin-top: 30px;">
+                    <p style="font-size: 25px;color: white;">Toll Free</p>
+                    <p style="font-size: 25px;color: white;">1800 4590 3210</p>
+                </div>
+            </div>
+            <div id="f3" style="display: flex;margin-left: 300px;">
+                <img src="image/i8.png" alt="" id="f31">
+                <div style="margin-left: 30px; margin-top: 30px;">
+                    <p style="font-size: 25px;color: white;">Toll Free</p>
+                    <p style="font-size: 25px;color: white;">1800 4590 3210</p>
+                </div>
+            </div>
+        </div>
+        <div style="color: #f0f8ff;" class="f">
+            <div style="padding: 80px; margin-left: 100px;">
+                <p style="font-size: 25px;">Products</p>
+                <p style="color: rgb(184, 220, 220); font-size: 20px;">ZENORA SERIES</p>
+                <p style="color: rgb(184, 220, 220); font-size: 20px;">REJIVE SERIES</p>
+                <p style="color: rgb(184, 220, 220); font-size: 20px;">Compare</p>
+            </div>
+            <div style="padding: 80px;">
+                <p style="font-size: 25px;">Why V-Guard</p>
+                <p style="color: rgb(184, 220, 220); font-size: 20px;">Made For INdian Water Conditions</p>
+                <p style="color: rgb(184, 220, 220); font-size: 20px;">Trust Meets Affordability</p>
+                <p style="color: rgb(184, 220, 220); font-size: 20px;">Ultra Convenient Service</p>
+                <p style="color: rgb(184, 220, 220); font-size: 20px;">4 Decades Legacy</p>
+            </div>
+            <div style="padding: 80px;">
+                <p style="font-size: 25px;">Support</p>
+                <p style="color: rgb(184, 220, 220); font-size: 20px;">Request Service or Installation</p>
+                <p style="color: rgb(184, 220, 220);font-size: 20px;">Warranty & AWS Plans</p>
+                <p style="color: rgb(184, 220, 220); font-size: 20px;">Register A Complaint</p>
+                <p style="color: rgb(184, 220, 220); font-size: 20px;">FAQS</p>
+                <p style="color: rgb(184, 220, 220);font-size: 20px;">Terms & Conditions</p>
+            </div>
+            <div style="padding: 80px;">
+                <button id="ff"> What to buy</button><br><br><br><br>
+                <button id="ff1">Contact us</button>
+            </div>
+        </div>
+        <div id="g">
+            <img src="image/img1.jpg" alt="" id="g1">
+            <p style="color: #f0f8ff;" id="g2">Copyright © 2020 V-Guard Industries Ltd. All rights reserved.</p>
+            <p style="color: #f0f8ff;" id="g3">Privacy Policy | Terms of Use | Disclaimer</p>
+            <img src="image/i10.png" alt="" id="g4">
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+
+    <!-- footer end -->
+
+
+</body>
+
+<script>
+    $(document).ready(function () {
+        $('#a').mouseenter(function () {
+            $('#a1').slideDown()
+        })
+        $('#d1').mouseleave(function () {
+            $('#a1').slideUp()
+        })
+
+    })
+    $(document).ready(function () {
+        $('#b').mouseenter(function () {
+            $('#b1').slideDown()
+        })
+        $('#d2').mouseleave(function () {
+            $('#b1').slideUp()
+        })
+
+    })
+    $(document).ready(function () {
+        $('#e').mouseenter(function () {
+            $('#e1').slideDown()
+        })
+        $('#d3').mouseleave(function () {
+            $('#e1').slideUp()
+        })
+
+    })
+    $(document).ready(function () {
+        $('#c').mouseenter(function () {
+            $('#c1').slideDown()
+        })
+        $('#d4').mouseleave(function () {
+            $('#c1').slideUp()
+        })
+
+    })
+
+    $(document).ready(function () {
+        $('#rrr').mouseenter(function () {
+            $('#r2').slideDown()
+        })
+        $('#r').mouseleave(function () {
+            $('#r2').slideUp()
+        })
+
+    })
+    $(document).ready(function () {
+        $('#rrr1').mouseenter(function () {
+            $('#r3').slideDown()
+        })
+        $('#r4').mouseleave(function () {
+            $('#r3').slideUp()
+        })
+
+    })
+    $(document).ready(function () {
+        $('#rrr2').mouseenter(function () {
+            $('#r6').slideDown()
+        })
+        $('#r5').mouseleave(function () {
+            $('#r6').slideUp()
+        })
+    })
+
+</script>
+<script>
+    AOS.init();
+</script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Display the preloader
+        const preloader = document.querySelector(".preloader");
+
+        // Set the duration (in milliseconds) for which the preloader should be displayed
+        const preloaderDuration = 4000; // 3 seconds
+
+        // Show the preloader
+        preloader.style.display = "flex";
+
+        // Hide the preloader after the specified duration
+        setTimeout(function () {
+            preloader.style.display = "none";
+        }
+
+            , preloaderDuration);
+    });
+</script>
+
+</html>
